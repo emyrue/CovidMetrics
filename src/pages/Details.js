@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import back from '../back.ico';
+import spain from '../spain.svg';
 
 export default function Details(props) {
   const { region } = props;
@@ -13,33 +14,40 @@ export default function Details(props) {
         </Link>
         <h3>Statistics by region</h3>
       </header>
-      <h2 className="region-name">
-        Cases in
-        {' '}
-        {region.name}
-        {' '}
-        on August 31, 2020
-      </h2>
+      <div className="details-headline">
+        <img className="flag" src={spain} alt="divish-flag" />
+        <h2 className="region-name">
+          Cases in
+          {' '}
+          {region.name}
+          {' '}
+          on August 31, 2020
+        </h2>
+      </div>
       <ul>
         <li>
-          All confirmed cases:
-          {' '}
-          {region.confirmed}
+          <div>All confirmed cases:</div>
+          <div>{region.confirmed}</div>
         </li>
         <li>
-          Deaths:
-          {' '}
-          {region.deaths}
+          <div>Deaths:</div>
+          <div>{region.deaths}</div>
         </li>
         <li>
-          Intensive care patients:
-          {' '}
-          {region.today_intensive_care}
+          <div>Intensive care patients:</div>
+          <div>{region.today_intensive_care}</div>
         </li>
         <li>
-          Today&apos;s new confirmed cases:
-          {' '}
-          {region.today_new_confirmed}
+          <div>Today&apos;s new confirmed cases:</div>
+          <div>{region.today_new_confirmed}</div>
+        </li>
+        <li>
+          <div>Today&apos;s deaths:</div>
+          <div>{region.today_new_deaths}</div>
+        </li>
+        <li>
+          <div>Today&apos;s total hospitalised patients:</div>
+          <div>{region.today_total_hospitalised_patients}</div>
         </li>
       </ul>
     </section>
@@ -51,8 +59,9 @@ Details.propTypes = {
     name: PropTypes.string.isRequired,
     confirmed: PropTypes.number.isRequired,
     deaths: PropTypes.number.isRequired,
-    today_hospitalised_patients_with_symptoms: PropTypes.number.isRequired,
+    today_total_hospitalised_patients: PropTypes.number.isRequired,
     today_new_confirmed: PropTypes.number.isRequired,
     today_intensive_care: PropTypes.number.isRequired,
+    today_new_deaths: PropTypes.number.isRequired,
   }).isRequired,
 };
