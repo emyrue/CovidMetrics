@@ -6,6 +6,7 @@ export default function reducer(state = {
   regions: [],
   confirmed: 0,
   deaths: 0,
+  intensive: 0,
 }, action) {
   switch (action.type) {
     case SAVE:
@@ -19,6 +20,7 @@ export default function reducer(state = {
         })),
         confirmed: action.data.today_confirmed,
         deaths: action.data.today_deaths,
+        intensive: action.data.today_intensive_care,
       };
     default:
       return state;

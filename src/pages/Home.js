@@ -10,11 +10,9 @@ function Home() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<DisplayRegions />} />
-        {regions.regions.map((region) => {
-          return (
-            <Route key={region.id} path={region.id} element={<Details region={region} />} />
-          );
-        })}
+        {regions.regions.map((region) => (
+          <Route key={region.id} path={region.id} element={<Details region={region} />} />
+        ))}
       </Routes>
     </BrowserRouter>
   );

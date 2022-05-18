@@ -4,8 +4,34 @@
   padding: 0;
 }
 
+.title {
+  background-color: hotpink;
+  color: white;
+  display: flex;
+  justify-content: center;
+  min-height: 30px;
+  align-items: center;
+  font-size: 15px;
+}
+
+.main-headline {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px;
+  height: 250px;
+  background-color: #AA336A;
+  color: white;
+}
+
+.flag {
+  width: 150px;
+}
+
 .regions {
   display: flex;
+  background-color: #AA336A;
   flex-wrap: wrap;
   justify-content: space-around;
 }
@@ -20,9 +46,18 @@
   align-items: center;
   padding: 5px;
   text-decoration: none;
-  color: black;
+  color: white;
+  background-color: hotpink;
+  border: 1px solid #AA336A;
 }
 
 .region-list {
   list-style: none;
+}
+
+.back {
+  fill: white;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
