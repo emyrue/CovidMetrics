@@ -1,6 +1,5 @@
 import getStats from '../redux/getFromAPI';
 import instance from '../axios/axios';
-import axios from 'axios';
 
 jest.mock('../axios/axios');
 
